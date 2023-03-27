@@ -1,14 +1,20 @@
 import React, { useState } from "react";
-import { encode } from "./Algorithm/lsb";
+import { encode, decode } from "./Algorithm/lsb";
 
 export default () => {
-    const [result, setResult] = useState(null);
+    const [resultImage, setResultImage] = useState(null);
+    const [resultMessage, setResultMessage] = useState(null);
     const message = `1234567890 TEST test ПРОВЕРКА проверка!"№;%:?*()`;
     const image = "resources/test.bmp";
-    if (!result) {
+    if (!resultImage) {
         encode(message, image, true).then((url) => {
-            setResult(url);
-    });
+            setResultImage(url);
+        });
+    }
+    if (!resultMessage && resultImage) {
+        decode(resultImage).then((res) => {
+            setResultMessage(res);
+        });
     }
     return (
         <>
@@ -21,18 +27,27 @@ export default () => {
                     imageRendering: "pixelated",
                 }}
             ></img>
-            <div>тестовое сообщение:{message}</div>
-            {result && (
+            <div>
+                тестовое сообщение:
+                <p>{message}</p>
+            </div>
+            {resultImage && (
                 <>
                     <div>результат:</div>
                     <img
-                        src={result}
+                        src={resultImage}
                         style={{
                             width: "256px",
                             imageRendering: "pixelated",
                         }}
                     ></img>
                 </>
+            )}
+            {resultMessage && (
+                <div>
+                    Результат расшифровки:
+                    <p>{resultMessage}</p>
+                </div>
             )}
         </>
     );
