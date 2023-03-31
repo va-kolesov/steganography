@@ -64,7 +64,7 @@ async function putMessageInLSB(url, message) {
 }
 
 /**
- * Проверка 
+ * Проверка ?><M
  * @param {ArrayBuffer} buffer 
  * @returns 
  */
@@ -88,10 +88,19 @@ async function getMessageFromLSB(imageUrl) {
     const dataView = new DataView(buffer);
     const BMP_OFFSET = 54; // отступ до пикселей
     let message = "";
+    let byte = "";
     for (let i = 0; i < dataView.byteLength - BMP_OFFSET; i++) {
         let byteValue = dataView.getUint8(BMP_OFFSET + i);
         // получение последнего бита байта и добавление его в сообщение
-        if (message.slice()) message += (byteValue & 0x01).toString();
+        byte += (byteValue & 0x01).toString();
+        if (byte.length === 8) {
+            // Дошли до конца сообщения
+            if (byte === MESSAGE_ENGING) {
+                break;
+            }
+            message += byte;
+            byte = "";
+        }
     }
     return message;
 }
