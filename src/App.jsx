@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { encode, decode } from "./Algorithm/lsb";
+import { encode, excract } from "./Algorithm/lsb";
 
 export default () => {
     const [resultImage, setResultImage] = useState(null);
@@ -7,14 +7,18 @@ export default () => {
     const message = `1234567890 TEST test ПРОВЕРКА проверка!"№;%:?*()`;
     const image = "resources/test.bmp";
     if (!resultImage) {
-        encode(message, image, true).then((url) => {
+        encode(message, image).then((url) => {
             setResultImage(url);
+        }).catch((error) => {
+            alert(error);
         });
     }
     if (!resultMessage && resultImage) {
-        decode(resultImage).then((res) => {
+        excract(resultImage).then((res) => {
             setResultMessage(res);
-        });
+        }).catch((error) => {
+            alert(error);
+        });;
     }
     return (
         <>
