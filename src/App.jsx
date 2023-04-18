@@ -1,58 +1,30 @@
-import React, { useState } from "react";
-import { encode, excract } from "./Algorithm/lsb";
+import React from "react";
 
-export default () => {
-    const [resultImage, setResultImage] = useState(null);
-    const [resultMessage, setResultMessage] = useState(null);
-    const message = `1234567890 TEST test ПРОВЕРКА проверка!"№;%:?*()`;
-    const image = "resources/test.bmp";
-    if (!resultImage) {
-        encode(message, image).then((url) => {
-            setResultImage(url);
-        }).catch((error) => {
-            alert(error);
-        });
-    }
-    if (!resultMessage && resultImage) {
-        excract(resultImage).then((res) => {
-            setResultMessage(res);
-        }).catch((error) => {
-            alert(error);
-        });;
-    }
+import { HashRouter, Routes, Route } from "react-router-dom";
+import Main from "./front/Main";
+import Decoding from "./front/Decoding";
+import Encrypt from "./front/Encrypt";
+import Resultencrypt from "./front/Resultencrypt";
+import Resultdecoding from "./front/Resultdecoding";
+import Sizeerror from "./front/Sizeerror";
+import Sizeformat from "./front/Sizeformat";
+import ApiDemo from "./ApiDemo";
+
+function App() {
     return (
-        <>
-            <h3>Тут будет приложение</h3>
-            <div>тестовое изображение:</div>
-            <img
-                src={image}
-                style={{
-                    width: "256px",
-                    imageRendering: "pixelated",
-                }}
-            ></img>
-            <div>
-                тестовое сообщение:
-                <p>{message}</p>
-            </div>
-            {resultImage && (
-                <>
-                    <div>результат:</div>
-                    <img
-                        src={resultImage}
-                        style={{
-                            width: "256px",
-                            imageRendering: "pixelated",
-                        }}
-                    ></img>
-                </>
-            )}
-            {resultMessage && (
-                <div>
-                    Результат расшифровки:
-                    <p>{resultMessage}</p>
-                </div>
-            )}
-        </>
+        <HashRouter>
+            <Routes>
+                <Route path="/" element={<Main />} />
+                <Route path="decoding" element={<Decoding />} />
+                <Route path="encrypt" element={<Encrypt />} />
+                <Route path="resultencrypt" element={<Resultencrypt />} />
+                <Route path="resultdecoding" element={<Resultdecoding />} />
+                <Route path="sizeerror" element={<Sizeerror />} />
+                <Route path="sizeformat" element={<Sizeformat />} />
+                <Route path="demo" element={<ApiDemo />} />
+            </Routes>
+        </HashRouter>
     );
-};
+}
+
+export default App;
