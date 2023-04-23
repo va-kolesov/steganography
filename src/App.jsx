@@ -9,15 +9,26 @@ import Resultdecoding from "./front/Resultdecoding";
 import Sizeerror from "./front/Sizeerror";
 import Sizeformat from "./front/Sizeformat";
 import ApiDemo from "./ApiDemo";
+import { encode, excract } from "./Algorithm/lsb";
 
 function App() {
+    const [encryptImage, setEncryptImage] = React.useState('');
+    const [encryptText, setEncryptText] = React.useState('');
+    const [resultImage, setResultImage] = React.useState('');
+
+    const onEncrypt = async (img, txt) => {
+        setEncryptImage(img);
+        setEncryptText(txt);
+        const result = await encode(txt, img);
+        setResultImage(result);
+    }
     return (
         <HashRouter>
             <Routes>
                 <Route path="/" element={<Main />} />
                 <Route path="decoding" element={<Decoding />} />
-                <Route path="encrypt" element={<Encrypt />} />
-                <Route path="resultencrypt" element={<Resultencrypt />} />
+                <Route path="encrypt" element={<Encrypt onEncrypt={onEncrypt}/>} />
+                <Route path="resultencrypt" element={<Resultencrypt image={resultImage}/>} />
                 <Route path="resultdecoding" element={<Resultdecoding />} />
                 <Route path="sizeerror" element={<Sizeerror />} />
                 <Route path="sizeformat" element={<Sizeformat />} />

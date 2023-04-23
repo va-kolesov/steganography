@@ -9,7 +9,7 @@ const Sizeformat = () => {
     };
 
     return (
-        <div class="img6">
+        <div className="img6">
             <div className="errformat">
                 <p className="errsizep">
                     Неподходящий формат изображения, допустимый формат BMP{" "}

@@ -9,9 +9,9 @@ const Resultdecoding = () => {
     };
 
     return (
-        <div class="img4">
+        <div className="img4">
             <div>
-                <fieldset cols="40" rows="5" class="shifrtext"></fieldset>
+                <fieldset cols="40" rows="5" className="shifrtext"></fieldset>
                 <p className="shifrtext2">Зашифрованный текст</p>
                 <button className="buttonnazad" onClick={goHome}>
                     Назад

@@ -1,7 +1,7 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
 
-const Resultencrypt = () => {
+const Resultencrypt = ({image}) => {
     let navigate = useNavigate();
 
     const goHome = () => {
@@ -9,10 +9,10 @@ const Resultencrypt = () => {
     };
 
     return (
-        <div class="img4">
+        <div className="img4">
             <div>
                 <div className="shifrovanieitog">
-                    <p className="shifrovanieitog2">Изображение</p>
+                    <img src={image}/>
                 </div>
                 <button className="buttonnazad" onClick={goHome}>
                     Назад

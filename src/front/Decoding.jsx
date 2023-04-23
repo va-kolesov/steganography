@@ -31,20 +31,20 @@ const Decoding = () => {
     };
 
     return (
-        <div class="img2">
+        <div className="img2">
             <div className="shifrovanie">
                 <p className="shifrovanie2">Расшифровка</p>
             </div>
-            <button onClick={goHome} class="buttonnazad">
+            <button onClick={goHome} className="buttonnazad">
                 Назад
             </button>
 
             <form onSubmit={(e) => e.preventDefault()} action="">
-                <div class="hh2"></div>
+                <div className="hh2"></div>
 
-                {image && <img class="hh2" src={image} alt="preview image" />}
+                {image && <img className="hh2" src={image} alt="preview image" />}
 
-                <label class="R2">
+                <label className="R2">
                     <input
                         type="file"
                         accept=".bmp"

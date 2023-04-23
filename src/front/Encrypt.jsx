@@ -1,18 +1,22 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
 import { Link } from "react-router-dom";
-import { useState } from "react";
-import { useEffect, useRef } from "react";
+import "./Encrypt.css";
 
-const Encrypt = () => {
-    const inputFile = useRef(null);
+const Encrypt = ({ onEncrypt }) => {
+    const [value, setValue] = React.useState("");
+    const [image, setImage] = React.useState(null);
+
     let navigate = useNavigate();
 
     const goHome = () => {
         navigate("/");
     };
 
-    const [image, setImage] = useState(null);
+    const encrypt = () => {
+        onEncrypt(image, value);
+        navigate("/resultencrypt");
+    };
 
     const onImageChange = (event) => {
         if (event.target.files && event.target.files[0]) {
@@ -20,53 +24,61 @@ const Encrypt = () => {
         }
     };
 
-    const [value, setValue] = React.useState("");
-
     const handleChange = (event) => {
         setValue(event.target.value);
     };
 
     return (
-        <div class="img3">
-            <div className="shifrovanie">
-                <p className="shifrovanie2">Шифрование</p>
+        <div className="Page_root Encrypt">
+            <div className="Encrypt_header">
+                <span className="Encrypt_header_text">Шифрование</span>
             </div>
-            <button onClick={goHome} class="nazad">
-                Назад
-            </button>
 
-            <form onSubmit={(e) => e.preventDefault()} action="">
-                <textarea
-                    name="Text1"
-                    cols="40"
-                    rows="5"
-                    value={value}
-                    onChange={handleChange}
-                    class="field-type"
-                ></textarea>
-
-                <p class="text66">Текст</p>
-
-                <div class="hh"></div>
-
-                {image && <img class="hh" src={image} alt="preview image" />}
-
-                <label class="R">
-                    <input
-                        type="file"
-                        accept=".bmp"
-                        onChange={onImageChange}
-                        className="filetype"
-                    />
-                    <p className="textinput">Изображение</p>
-                </label>
-
-                <Link to="/resultencrypt">
-                    <button disabled={!value || !image} className="primenit">
-                        Применить
-                    </button>{" "}
-                </Link>
-            </form>
+            <div className="flex-row Page_body">
+                <div className="Encrypt_textarea_wrapper">
+                    <textarea
+                        cols="40"
+                        rows="5"
+                        value={value}
+                        onChange={handleChange}
+                        className="Encrypt_textarea"
+                    ></textarea>
+                    <div className="Encrypt_textarea_placeholder">Текст</div>
+                </div>
+                <div
+                    className="Encrypt_image_wrapper"
+                    onClick={() => {
+                        var input = document.createElement("input");
+                        input.type = "file";
+                        input.accept = ".bmp";
+                        input.onchange = onImageChange;
+                        input.click();
+                    }}
+                >
+                    {image && (
+                        <img
+                            className="Encrypt_image"
+                            src={image}
+                            alt="preview image"
+                        />
+                    )}
+                    {!image && (
+                        <p className="Encrypt_image_placeholder">Изображение</p>
+                    )}
+                </div>
+            </div>
+            <div className="flex-row">
+                <button
+                    disabled={!value || !image}
+                    onClick={encrypt}
+                    className="button"
+                >
+                    <span className="button_caption">Применить</span>
+                </button>
+                <button onClick={goHome} className="button">
+                    <span className="button_caption">Назад</span>
+                </button>
+            </div>
         </div>
     );
 };

@@ -9,7 +9,7 @@ const Sizeerror = () => {
     };
 
     return (
-        <div class="img5">
+        <div className="img5">
             <div className="errsize">
                 <p className="errsizep">
                     Слишком большое сообщение для изображения с таким размером{" "}

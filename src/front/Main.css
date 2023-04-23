@@ -1,0 +1,107 @@
+
+/* задний фон index */
+.img {
+    background-image: url("img/b.png");
+    background-size: "cover";
+    height: 100vh;
+    max-width: 1835px;
+    background-repeat: no-repeat;
+}
+
+.index_middle {
+    display: flex;
+
+    justify-content: space-between;
+}
+.wraper {
+    min-height: 100%;
+    overflow: hidden;
+}
+/* кнопка зашифровки главный экран*/
+.button1 {
+    display: flex;
+    border-radius: 50%;
+    box-sizing: border-box;
+    position: absolute;
+    width: 420px;
+    height: 103px;
+    left: 174px;
+    top: 161px;
+    padding-right: 200px;
+    background: rgba(58, 165, 88, 0.5);
+    border: 1px solid #0b402a;
+}
+
+/* кнопка расшифровки главный экран*/
+.button2 {
+    display: flex;
+    border-radius: 50%;
+    box-sizing: border-box;
+    padding-left: 200px;
+    position: absolute;
+    width: 420px;
+    height: 103px;
+    left: 880px;
+    top: 161px;
+    background: rgba(58, 165, 88, 0.5);
+    border: 1px solid #0b402a;
+}
+
+/* что нужно сделать блок*/
+.box1 {
+    box-sizing: border-box;
+    display: block;
+    position: absolute;
+    height: 112px;
+    left: 520px;
+    width: 400px;
+    top: 38px;
+    background: rgba(45, 111, 160, 0.5);
+    border: 1px solid #19177e;
+    border-radius: 32px;
+}
+
+/* что нужно сделать надпись*/
+.text1 {
+    position: absolute;
+    left: 70px;
+
+    font-family: "Inria Serif";
+    font-style: italic;
+    font-weight: 40;
+    font-size: 25px;
+    line-height: 43px;
+    text-align: center;
+    color: #0e044f;
+    mix-blend-mode: overlay;
+}
+/* надпись на кнопках index*/
+.p2 {
+    position: absolute;
+    box-sizing: border-box;
+    height: 103px;
+    top: -10px;
+    left: 100px;
+    font-family: "Inria Serif";
+    font-style: italic;
+    font-size: 36px;
+    text-align: center;
+    color: #05030a;
+    mix-blend-mode: overlay;
+}
+
+/* надпись стенография bpm index*/
+.text3 {
+    position: absolute;
+    width: 290px;
+    height: 86px;
+    left: 10px;
+    font-family: "Inria Serif";
+    font-style: italic;
+    font-weight: 400;
+    font-size: 36px;
+    line-height: 43px;
+    text-align: center;
+    color: #0e044f;
+    mix-blend-mode: overlay;
+}
