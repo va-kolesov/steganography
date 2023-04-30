@@ -49,6 +49,7 @@ body,
     border-radius: 32px;
     min-width: 300px;
     box-sizing: border-box;
+    cursor: pointer;
 }
 
 .button_caption {
@@ -186,48 +187,7 @@ input[type="file"] {
     color: #1a102d;
     mix-blend-mode: overlay;
 }
-/* поле загрузки изображения decoding*/
-.hh2 {
-    box-sizing: border-box;
-    position: absolute;
-    height: 400px;
-    left: 400px;
-    right: 452px;
-    top: 200px;
-    width: 600px;
-    background: rgba(195, 130, 191, 0.63);
-    border: 1px solid #19177e;
-    border-radius: 32px;
-}
-/* поле загрузки изображения decoding надпись*/
-.textinput2 {
-    position: absolute;
-    width: 511px;
-    height: 54px;
-    top: 140px;
-    left: +50px;
-    font-family: "Inria Serif";
-    font-style: italic;
-    font-weight: 400;
-    font-size: 36px;
-    line-height: 43px;
-    text-align: center;
-    color: #1a102d;
-    mix-blend-mode: overlay;
-}
-/* поле загрузки изображения  прозрачное decoding*/
-.R2 {
-    box-sizing: border-box;
-    position: absolute;
-    height: 400px;
-    left: 400px;
-    right: 452px;
-    top: 200px;
-    width: 600px;
-    color: azure;
-    border: 1px solid #19177e;
-    border-radius: 32px;
-}
+
 /*ошибка размера блок с надписью */
 .errsize {
     box-sizing: border-box;

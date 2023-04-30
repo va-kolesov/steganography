@@ -1,7 +1,7 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
 
-const Resultdecoding = () => {
+const Resultdecoding = ({text}) => {
     let navigate = useNavigate();
 
     const goHome = () => {
@@ -11,8 +11,8 @@ const Resultdecoding = () => {
     return (
         <div className="img4">
             <div>
-                <fieldset cols="40" rows="5" className="shifrtext"></fieldset>
-                <p className="shifrtext2">Зашифрованный текст</p>
+                 <textarea value={text} className="shifrtext"> </textarea>
+                <p className="shifrtext2">{text}</p>
                 <button className="buttonnazad" onClick={goHome}>
                     Назад
                 </button>

@@ -1,6 +1,6 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
-
+ import "./Resultencrypt.css";
 const Resultencrypt = ({image}) => {
     let navigate = useNavigate();
 
@@ -8,19 +8,41 @@ const Resultencrypt = ({image}) => {
         navigate("/");
     };
 
+    function handleClick() {
+        // создаем ссылку на картинку
+        const link = document.createElement('a');
+        link.href = image;
+        link.download = 'download.bmp';
+        // добавляем ссылку на страницу и симулируем клик
+        document.body.appendChild(link);
+        link.click();
+        document.body.removeChild(link);
+      }
+
+
     return (
-        <div className="img4">
-            <div>
-                <div className="shifrovanieitog">
-                    <img src={image}/>
+        <div className="Page_root Resultencrypt">
+            <div className="Resultencrypt_image_wrapper ">
+                  <img src={image}/>
+                  
                 </div>
-                <button className="buttonnazad" onClick={goHome}>
-                    Назад
+         <div className="flex-row">
+         <button
+                    
+                    className="button"
+                >
+                    <span className="button_caption" onClick={handleClick}>Сохранить</span>
                 </button>
-                <button className="buttonsohr"> Сохранить</button>
-            </div>
-        </div>
+                
+         <button onClick={goHome} className="button">
+             <span className="button_caption">Назад</span>
+         </button>
+         </div>
+     
+     
+     </div>
     );
 };
 
 export default Resultencrypt;
+
