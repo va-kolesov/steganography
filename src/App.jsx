@@ -15,21 +15,28 @@ function App() {
     const [encryptImage, setEncryptImage] = React.useState('');
     const [encryptText, setEncryptText] = React.useState('');
     const [resultImage, setResultImage] = React.useState('');
-
+    const [decodingImage, setDecodingImage] = React.useState('');
+    const [resultText, setResultText] = React.useState('');
     const onEncrypt = async (img, txt) => {
         setEncryptImage(img);
         setEncryptText(txt);
         const result = await encode(txt, img);
         setResultImage(result);
     }
+    const onDecoding = async (img) => {
+        setDecodingImage(img);
+        
+        const  messange= await excract(img);
+        setResultText(messange);
+    }
     return (
         <HashRouter>
             <Routes>
                 <Route path="/" element={<Main />} />
-                <Route path="decoding" element={<Decoding />} />
+                <Route path="decoding" element={<Decoding onDecoding={onDecoding}/>} />
                 <Route path="encrypt" element={<Encrypt onEncrypt={onEncrypt}/>} />
                 <Route path="resultencrypt" element={<Resultencrypt image={resultImage}/>} />
-                <Route path="resultdecoding" element={<Resultdecoding />} />
+                <Route path="resultdecoding" element={<Resultdecoding text={resultText}/>} />
                 <Route path="sizeerror" element={<Sizeerror />} />
                 <Route path="sizeformat" element={<Sizeformat />} />
                 <Route path="demo" element={<ApiDemo />} />

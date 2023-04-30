@@ -47,6 +47,8 @@
     border: 1px solid #19177e;
     border-radius: 32px;
     resize: none;
+    tab-size: 78; 
+    padding: 20px;
 }
 
 .Encrypt_textarea_placeholder {
@@ -74,6 +76,7 @@
     display: flex;
     align-items: center;
     justify-content: center;
+    cursor: pointer; 
 }
 
 .Encrypt_image {

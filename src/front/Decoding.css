@@ -1,0 +1,63 @@
+.Decoding {
+    background-image: url("img/c.png");
+}
+
+.Decoding_header {
+    box-sizing: border-box;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100px;
+    width: 300px;
+    background: rgba(72, 140, 210, 0.82);
+    border: 1px solid #19177e;
+    border-radius: 32px;
+    margin-bottom: 30px;
+}
+
+.Decoding_header_text {
+    font-style: italic;
+    font-weight: 400;
+    font-size: 36px;
+    line-height: 43px;
+    text-align: center;
+    color: #05030a;
+    mix-blend-mode: overlay;
+    
+}
+
+
+.Decoding_image_wrapper {
+    box-sizing: border-box;
+    min-height: 400px;
+    min-width: 600px;
+    max-height: 500px;
+    max-width: 500px;
+    width: 100%;
+    height: 100%;
+    background: rgba(195, 130, 191, 0.63);
+    border: 1px solid #19177e;
+    border-radius: 32px;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer; 
+   
+}
+
+.Decoding_image {
+    width: 100%;
+    height: 100%;
+    object-fit: scale-down;
+}
+
+.Decoding_image_placeholder {
+    font-style: italic;
+    font-weight: 400;
+    font-size: 36px;
+    line-height: 43px;
+    text-align: center;
+    color: #1a102d;
+    mix-blend-mode: overlay;
+}
