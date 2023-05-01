@@ -1,6 +1,6 @@
 import React from "react";
 
-import { HashRouter, Routes, Route } from "react-router-dom";
+import { Routes, Route, useNavigate } from "react-router-dom";
 import Main from "./front/Main";
 import Decoding from "./front/Decoding";
 import Encrypt from "./front/Encrypt";
@@ -17,20 +17,37 @@ function App() {
     const [resultImage, setResultImage] = React.useState('');
     const [decodingImage, setDecodingImage] = React.useState('');
     const [resultText, setResultText] = React.useState('');
+    const navigate = useNavigate();
     const onEncrypt = async (img, txt) => {
         setEncryptImage(img);
         setEncryptText(txt);
-        const result = await encode(txt, img);
-        setResultImage(result);
+        try {
+            const result = await encode(txt, img);
+            setResultImage(result);
+        } catch (err){
+            if (err?.code === 1) {
+                navigate('/sizeformat');
+            }
+            if (err?.code === 2) {
+                navigate('/sizeerror');
+            }
+        }
     }
     const onDecoding = async (img) => {
-        setDecodingImage(img);
-        
-        const  messange= await excract(img);
-        setResultText(messange);
+        try {
+            setDecodingImage(img);
+            const  messange= await excract(img);
+            setResultText(messange);
+        } catch (err){
+            if (err?.code === 1) {
+                navigate('/sizeformat');
+            }
+            if (err?.code === 2) {
+                navigate('/sizeerror');
+            }
+        }
     }
     return (
-        <HashRouter>
             <Routes>
                 <Route path="/" element={<Main />} />
                 <Route path="decoding" element={<Decoding onDecoding={onDecoding}/>} />
@@ -41,7 +58,6 @@ function App() {
                 <Route path="sizeformat" element={<Sizeformat />} />
                 <Route path="demo" element={<ApiDemo />} />
             </Routes>
-        </HashRouter>
     );
 }
 

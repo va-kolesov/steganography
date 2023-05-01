@@ -41,13 +41,16 @@ async function putMessageInLSB(url, message) {
     const response = await fetch(url);
     const buffer = await response.arrayBuffer();
     if (!isBMP(buffer)) {
-        throw "Ошибка: переданный файл не является bmp-изображением.";
+        throw {code: 1, message: "Ошибка: переданный файл не является bmp-изображением."};
     }
     const dataView = new DataView(buffer);
-
+    const availableSize = dataView.byteLength - BMP_OFFSET;
+    if (availableSize < message.length) {
+        throw {code: 2, message: "Сообщение слишком длинное для этого изображения."};
+    }
     // шестнадцатью нулями обозначаем конец сообщения.
     const messageWithEnding = message + MESSAGE_ENGING;
-    for (let i = 0; i < dataView.byteLength - BMP_OFFSET; i++) {
+    for (let i = 0; i < availableSize; i++) {
         let byteValue = dataView.getUint8(BMP_OFFSET + i);
         if (i < messageWithEnding.length) {
             byteValue =
@@ -83,17 +86,16 @@ async function getMessageFromLSB(imageUrl) {
     const response = await fetch(imageUrl);
     const buffer = await response.arrayBuffer();
     if (!isBMP(buffer)) {
-        throw "Ошибка: переданный файл не является bmp-изображением.";
+        throw {code: 1, message: "Ошибка: переданный файл не является bmp-изображением."};
     }
     const dataView = new DataView(buffer);
-    const BMP_OFFSET = 54; // отступ до пикселей
     let message = "";
     let byte = "";
     for (let i = 0; i < dataView.byteLength - BMP_OFFSET; i++) {
         let byteValue = dataView.getUint8(BMP_OFFSET + i);
         // получение последнего бита байта и добавление его в сообщение
         byte += (byteValue & 0x01).toString();
-        if (byte.length === 8) {
+        if (byte.length === CHAR_SIZE) {
             // Дошли до конца сообщения
             if (byte === MESSAGE_ENGING) {
                 break;
