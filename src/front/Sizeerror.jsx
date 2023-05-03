@@ -1,6 +1,6 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
-
+import "./Sizeerror.css";
 const Sizeerror = () => {
     let navigate = useNavigate();
 
@@ -9,17 +9,24 @@ const Sizeerror = () => {
     };
 
     return (
-        <div className="img5">
-            <div className="errsize">
-                <p className="errsizep">
+        <div className="Page_root Sizeerror">
+           
+               
+        <div>
+            <div className="Sizeerror_messadge_wrapper">
+                <p className="errsize">
                     Слишком большое сообщение для изображения с таким размером{" "}
                 </p>
             </div>
-            <div>
-                <button className="buttonnazad" onClick={goHome}>
-                    Назад
-                </button>
             </div>
+            
+            <div className="flex-row">
+                 <span>   
+                </span>
+                <button onClick={goHome} className="button">
+             <span className="button_caption">Назад</span>
+         </button>
+         </div>
         </div>
     );
 };

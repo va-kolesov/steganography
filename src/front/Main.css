@@ -1,17 +1,25 @@
-
-/* задний фон index */
-.img {
+.Main{
     background-image: url("img/b.png");
-    background-size: "cover";
-    height: 100vh;
-    max-width: 1835px;
-    background-repeat: no-repeat;
+}
+
+.index_header{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+   
+      
 }
 
 .index_middle {
     display: flex;
+margin-top: 0px;
 
-    justify-content: space-between;
+
+justify-content: space-between;
+align-items: center;
+}
+.index_bottom{
+
 }
 .wraper {
     min-height: 100%;
@@ -22,12 +30,12 @@
     display: flex;
     border-radius: 50%;
     box-sizing: border-box;
-    position: absolute;
+   margin-right: 350px;
     width: 420px;
     height: 103px;
-    left: 174px;
-    top: 161px;
-    padding-right: 200px;
+    
+    
+   
     background: rgba(58, 165, 88, 0.5);
     border: 1px solid #0b402a;
     cursor: pointer; 
@@ -38,24 +46,25 @@
     display: flex;
     border-radius: 50%;
     box-sizing: border-box;
-    padding-left: 200px;
-    position: absolute;
+  margin:10px 150px 0px 150px;
+   
     width: 420px;
     height: 103px;
-    left: 880px;
-    top: 161px;
+    
+    
     background: rgba(58, 165, 88, 0.5);
     border: 1px solid #0b402a;
     cursor: pointer; 
 }
 
 /* что нужно сделать блок*/
-.box1 {
+.Main_header_block{
     box-sizing: border-box;
-    display: block;
-    position: absolute;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     height: 112px;
-    left: 520px;
+   
     width: 400px;
     top: 38px;
     background: rgba(45, 111, 160, 0.5);
@@ -64,11 +73,7 @@
 }
 
 /* что нужно сделать надпись*/
-.text1 {
-    position: absolute;
-    left: 87px;
-
-    font-family: "Inria Serif";
+.Main_header_text {   
     font-style: italic;
     font-weight: 40;
     font-size: 25px;
@@ -76,20 +81,23 @@
     text-align: center;
     color: #0e044f;
     mix-blend-mode: overlay;
+
 }
 /* надпись на кнопках index*/
-.p2 {
-    position: absolute;
+.index_middle_text {
+   padding-top: 20px;
+   padding-left:89px;
     box-sizing: border-box;
     height: 103px;
-    top: -10px;
-    left: 100px;
+    font-weight: 40;
     font-family: "Inria Serif";
     font-style: italic;
     font-size: 36px;
     text-align: center;
     color: #05030a;
     mix-blend-mode: overlay;
+    line-height: 43px;
+    
 }
 
 /* надпись стенография bpm index*/
@@ -106,4 +114,22 @@
     text-align: center;
     color: #0e044f;
     mix-blend-mode: overlay;
+}
+.bt1{
+    display: flex;
+    justify-content: space-between;
+}
+.stenog {
+    box-sizing: border-box;
+    position: absolute;
+    height: 100px;
+    left: 1000px;
+    right: 142px;
+    
+    width: 300px;
+    background: rgba(160, 141, 45,0.85);
+    
+    border: 1px solid #19177e;
+    border-radius: 32px;
+    margin-top: 340px;
 }

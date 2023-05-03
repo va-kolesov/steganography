@@ -7,12 +7,14 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    height: 100px;
-    width: 300px;
+    min-height: 80px;
+   min-width: 400px;
     background: rgba(72, 140, 210, 0.82);
     border: 1px solid #19177e;
     border-radius: 32px;
+    margin-bottom: 20px;
 }
+
 
 .Encrypt_header_text {
     font-style: italic;

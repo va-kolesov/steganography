@@ -5,38 +5,34 @@ import "./Main.css";
 
 function Main() {
     return (
-        <div className="img">
+        <div className="Page_root Main">
             <div className="wraper">
-                <div className="box1">
-                    <p className="text1">Что нужно сделать?</p>
-                </div>
-                <div className="index_middle">
-                    <Link to="/decoding">
-                        <button className="button2">
-                            <p className="p2">Расшифровать</p>
-                        </button>
-                    </Link>
-                    <Link to="/encrypt">
-                        <button className="button1">
-                            <p className="p2">Зашифровать</p>
-                        </button>
-                    </Link>
-                </div>
-                <div>
-                    <Link to="/sizeerror">
-                        <button>
-                            <p className="p2">размер</p>
-                        </button>
-                    </Link>
-                    <Link to="/sizeformat">
-                        <button>
-                            <p className="p2">размер</p>
-                        </button>
-                    </Link>
-                    <div className="stenog">
-                        <p className="text3">Стенография в BPM</p>
+                <div className="index_header">
+                <div className="Main_header_block">
+                    <span className="Main_header_text">Что необходимо сделать?</span>
                     </div>
+               </div>
+                <div className="index_middle">
+                    
+                    <Link to="/encrypt" style={{ textDecoration: 'none' }}>
+                        <button className="button2"  >
+                            <span className="index_middle_text">Зашифровать</span>
+                        </button>
+                    </Link>
+                    <Link to="/decoding" style={{ textDecoration: 'none' }}>
+                        <button className="button2" >
+                            <span className="index_middle_text">Расшифровать</span>
+                        </button>
+                    </Link>
+
                 </div>
+                
+                
+                    <div className="stenog">
+                        <span className="text3">Стеганография в BPM</span>
+                    </div>
+                    
+                
             </div>
         </div>
     );

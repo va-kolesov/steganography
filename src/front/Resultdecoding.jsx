@@ -1,6 +1,6 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
-
+import "./Resultdecoding.css";
 const Resultdecoding = ({text}) => {
     let navigate = useNavigate();
 
@@ -9,16 +9,19 @@ const Resultdecoding = ({text}) => {
     };
 
     return (
-        <div className="img4">
-            <div>
-                 <textarea value={text} className="shifrtext"> </textarea>
-                <p className="shifrtext2">{text}</p>
-                <button className="buttonnazad" onClick={goHome}>
-                    Назад
-                </button>
-                <button>Сохранить</button>
-            </div>
+        <div className="Page_root Resultdecoding">
+           <div>
+                 <textarea  className="Resultdecoding_text_wrapper" value={text} > </textarea>
+                 </div>
+                 <div className="flex-row">
+                 <span>   
+                </span>
+                <button onClick={goHome} className="button">
+             <span className="button_caption">Назад</span>
+         </button>
+         </div>
         </div>
+        
     );
 };
 

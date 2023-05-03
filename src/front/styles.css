@@ -40,6 +40,7 @@ body,
 
 .Page_body {
     height: 100%;
+   
 }
 
 .button {
@@ -50,6 +51,7 @@ body,
     min-width: 300px;
     box-sizing: border-box;
     cursor: pointer;
+   margin-top: 30px;
 }
 
 .button_caption {
@@ -189,17 +191,7 @@ input[type="file"] {
 }
 
 /*ошибка размера блок с надписью */
-.errsize {
-    box-sizing: border-box;
-    position: absolute;
-    height: 454px;
-    left: 900px;
-    width: 500px;
-    top: 71px;
-    background: rgba(82, 113, 118, 0.81);
-    border: 1px solid #19177e;
-    border-radius: 32px;
-}
+
 /*ошибка размера блок с надписью сама надпись */
 .errsizep {
     position: absolute;
@@ -216,29 +208,4 @@ input[type="file"] {
     align-items: center;
     text-align: center;
     color: #19212c;
-}
-/*ошибка формата блок с надписью */
-.errformat {
-    box-sizing: border-box;
-    position: absolute;
-    height: 454px;
-    left: 79px;
-    width: 500px;
-    top: 100px;
-    background: rgba(91, 53, 152, 0.8);
-    border: 1px solid #19177e;
-    border-radius: 32px;
-}
-/* index поле стенограмма bpm */
-.stenog {
-    box-sizing: border-box;
-    position: absolute;
-    height: 125px;
-    left: 1000px;
-    right: 142px;
-    top: 550px;
-    width: 300px;
-    background: rgba(160, 141, 45, 0.5);
-    border: 1px solid #19177e;
-    border-radius: 32px;
 }
