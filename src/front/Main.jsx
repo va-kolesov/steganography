@@ -11,11 +11,11 @@ function Main() {
                 <div className="Main_header_block">
                     <span className="Main_header_text">Что необходимо сделать?</span>
                     </div>
-               </div>
+               </div> 
                 <div className="index_middle">
-                    
+               
                     <Link to="/encrypt" style={{ textDecoration: 'none' }}>
-                        <button className="button2"  >
+                        <button className="button1"  >
                             <span className="index_middle_text">Зашифровать</span>
                         </button>
                     </Link>
@@ -24,13 +24,16 @@ function Main() {
                             <span className="index_middle_text">Расшифровать</span>
                         </button>
                     </Link>
-
+ 
                 </div>
-                
-                
-                    <div className="stenog">
-                        <span className="text3">Стеганография в BPM</span>
+                <div className="flex-row Page_body">
+                <span>   
+                </span>
+                 <div className="stenog">
+                      <span className="text3">Стеганография в BPM</span>
                     </div>
+                </div>
+                  
                     
                 
             </div>
