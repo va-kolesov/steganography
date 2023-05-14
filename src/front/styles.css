@@ -66,7 +66,7 @@ body,
 
 /* задний фон экран расшифровки */
 .img2 {
-    background-image: url("img/c.png");
+    background-image: url("img/c.webp");
     background-size: "cover";
     height: 100vh;
     margin-top: -0px;
@@ -75,7 +75,7 @@ body,
 }
 /* задний фон экран результат */
 .img4 {
-    background-image: url("img/f.png");
+    background-image: url("img/f.webp");
     background-size: "cover";
     height: 100vh;
     margin-top: -20px;
@@ -84,7 +84,7 @@ body,
 
 /* задний фон экран ошибка размера */
 .img5 {
-    background-image: url("img/h.png");
+    background-image: url("img/h.webp");
     background-size: "cover";
     height: 100vh;
     margin-top: -20px;
@@ -95,7 +95,7 @@ body,
 }
 /* задний фон экран ошибка формата */
 .img6 {
-    background-image: url("img/g.png");
+    background-image: url("img/g.webp");
     background-size: "cover";
     height: 100vh;
     margin-top: -20px;

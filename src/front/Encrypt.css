@@ -1,5 +1,5 @@
 .Encrypt {
-    background-image: url("img/d.png");
+    background-image: url("img/d.webp");
 }
 
 .Encrypt_header {
@@ -8,7 +8,7 @@
     align-items: center;
     justify-content: center;
     min-height: 80px;
-   min-width: 400px;
+    min-width: 400px;
     background: rgba(72, 140, 210, 0.82);
     border: 1px solid #19177e;
     border-radius: 32px;
