@@ -7,22 +7,25 @@ export default () => {
     const message = `1234567890 TEST test ПРОВЕРКА проверка!"№;%:?*()`;
     const image = "resources/test.bmp";
     if (!resultImage) {
-        encode(message, image).then((url) => {
-            setResultImage(url);
-        }).catch((error) => {
-            alert(error);
-        });
+        encode(message, image)
+            .then((url) => {
+                setResultImage(url);
+            })
+            .catch((error) => {
+                alert(error);
+            });
     }
     if (!resultMessage && resultImage) {
-        excract(resultImage).then((res) => {
-            setResultMessage(res);
-        }).catch((error) => {
-            alert(error);
-        });;
+        excract(resultImage)
+            .then((res) => {
+                setResultMessage(res);
+            })
+            .catch((error) => {
+                alert(error);
+            });
     }
     return (
         <>
-            <h3>Тут будет приложение</h3>
             <div>тестовое изображение:</div>
             <img
                 src={image}

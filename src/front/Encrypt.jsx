@@ -1,11 +1,13 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
-import { Link } from "react-router-dom";
 import "./Encrypt.css";
+
+const IS_PROD = window.location.href.indexOf('github') !== -1;
+const IMG_FOLDER = IS_PROD ? 'assets' : 'src/front/img';
 
 const Encrypt = ({ onEncrypt }) => {
     const [value, setValue] = React.useState("");
-    const [image, setImage] = React.useState(null);
+    const [image, setImage] = React.useState(`${IMG_FOLDER}/cap.bmp`);
 
     let navigate = useNavigate();
 

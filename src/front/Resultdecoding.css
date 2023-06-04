@@ -1,26 +1,25 @@
-.Resultdecoding{
+.Resultdecoding {
     background-image: url("img/a.webp");
 }
 
 .Resultdecoding_text_wrapper {
-    
-        box-sizing: border-box;
-        position: absolute;
-        height: 500px;
-        left: 115px;
-        right: 402px;
-        top: 50px;
-        background: rgba(137, 14, 41, 0.51);
-        opacity: 0.55;
-        border: 1px solid #19177e;
-        border-radius: 32px;
-        overflow: hidden;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        padding: 20px;
+    box-sizing: border-box;
+    position: absolute;
+    height: 500px;
+    left: 115px;
+    right: 402px;
+    top: 50px;
+    background: rgba(137, 14, 41, 0.51);
+    opacity: 0.55;
+    border: 1px solid #19177e;
+    border-radius: 32px;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
 }
-.Resultdecoding_text{
+.Resultdecoding_text {
     width: 100%;
     height: 100%;
     object-fit: scale-down;

@@ -9,11 +9,10 @@ const Decoding = ({ onDecoding }) => {
     const goHome = () => {
         navigate("/");
     };
-    const decoding= () => {
+    const decoding = () => {
         onDecoding(image);
         navigate("/resultdecoding");
     };
-   
 
     const onImageChange = (event) => {
         if (event.target.files && event.target.files[0]) {
@@ -34,44 +33,39 @@ const Decoding = ({ onDecoding }) => {
 
     return (
         <div className="Page_root Decoding">
-         <div className="Decoding_header">
+            <div className="Decoding_header">
                 <span className="Decoding_header_text">Расшифровка</span>
             </div>
             <div
-                    className="Decoding_image_wrapper"
-                    onClick={() => {
-                        var input = document.createElement("input");
-                        input.type = "file";
-                        input.accept = ".bmp";
-                        input.onchange = onImageChange;
-                        input.click();
-                    }}
-                >
-                    {image && (
-                        <img
-                            className="Decoding_image "
-                            src={image}
-                            alt="preview image"
-                        />
-                    )}
-                    {!image && (
-                        <p className="Decoding_image_placeholder">Изображение</p>
-                    )}
-                </div>
-          
+                className="Decoding_image_wrapper"
+                onClick={() => {
+                    var input = document.createElement("input");
+                    input.type = "file";
+                    input.accept = ".bmp";
+                    input.onchange = onImageChange;
+                    input.click();
+                }}
+            >
+                {image && (
+                    <img
+                        className="Decoding_image "
+                        src={image}
+                        alt="preview image"
+                    />
+                )}
+                {!image && (
+                    <p className="Decoding_image_placeholder">Изображение</p>
+                )}
+            </div>
+
             <div className="flex-row">
-                <button
-                    disabled={!image}
-                    onClick={decoding}
-                    className="button"
-                >
+                <button disabled={!image} onClick={decoding} className="button">
                     <span className="button_caption">Применить</span>
                 </button>
                 <button onClick={goHome} className="button">
                     <span className="button_caption">Назад</span>
                 </button>
             </div>
-
         </div>
     );
 };

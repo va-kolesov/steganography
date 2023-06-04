@@ -10,23 +10,21 @@ const Sizeerror = () => {
 
     return (
         <div className="Page_root Sizeerror">
-           
-               
-        <div>
-            <div className="Sizeerror_messadge_wrapper">
-                <p className="errsize">
-                    Слишком большое сообщение для изображения с таким размером{" "}
-                </p>
+            <div>
+                <div className="Sizeerror_messadge_wrapper">
+                    <p className="errsize">
+                        Слишком большое сообщение для изображения с таким
+                        размером
+                    </p>
+                </div>
             </div>
-            </div>
-            
+
             <div className="flex-row">
-                 <span>   
-                </span>
+                <span></span>
                 <button onClick={goHome} className="button">
-             <span className="button_caption">Назад</span>
-         </button>
-         </div>
+                    <span className="button_caption">Назад</span>
+                </button>
+            </div>
         </div>
     );
 };

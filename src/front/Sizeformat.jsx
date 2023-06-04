@@ -9,22 +9,20 @@ const Sizeformat = () => {
     };
 
     return (
-       <div className="Page_root Formaterror">
-            
+        <div className="Page_root Formaterror">
             <div>
-            <div className="Formaterror_messadge_wrapper">
-                <p className="errformat">
-                Неподходящий формат изображения, допустимый формат BMP{" "}
-                </p>
-            </div>
+                <div className="Formaterror_messadge_wrapper">
+                    <p className="errformat">
+                        Неподходящий формат изображения, допустимый формат BMP
+                    </p>
+                </div>
             </div>
             <div className="flex-row">
-                 <span>   
-                </span>
+                <span></span>
                 <button onClick={goHome} className="button">
-             <span className="button_caption">Назад</span>
-         </button>
-         </div>   
+                    <span className="button_caption">Назад</span>
+                </button>
+            </div>
         </div>
     );
 };

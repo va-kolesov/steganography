@@ -40,7 +40,6 @@ body,
 
 .Page_body {
     height: 100%;
-   
 }
 
 .button {
@@ -51,7 +50,7 @@ body,
     min-width: 300px;
     box-sizing: border-box;
     cursor: pointer;
-   margin-top: 30px;
+    margin-top: 30px;
 }
 
 .button_caption {
@@ -64,45 +63,6 @@ body,
     mix-blend-mode: overlay;
 }
 
-/* задний фон экран расшифровки */
-.img2 {
-    background-image: url("img/c.webp");
-    background-size: "cover";
-    height: 100vh;
-    margin-top: -0px;
-
-    background-repeat: no-repeat;
-}
-/* задний фон экран результат */
-.img4 {
-    background-image: url("img/f.webp");
-    background-size: "cover";
-    height: 100vh;
-    margin-top: -20px;
-    background-repeat: no-repeat;
-}
-
-/* задний фон экран ошибка размера */
-.img5 {
-    background-image: url("img/h.webp");
-    background-size: "cover";
-    height: 100vh;
-    margin-top: -20px;
-    position: relative;
-    width: 1600px;
-    height: 800px;
-    background-repeat: no-repeat;
-}
-/* задний фон экран ошибка формата */
-.img6 {
-    background-image: url("img/g.webp");
-    background-size: "cover";
-    height: 100vh;
-    margin-top: -20px;
-    background-repeat: no-repeat;
-}
-
 input[type="file"] {
     display: none;
 }
-

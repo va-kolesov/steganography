@@ -9,16 +9,16 @@ import Resultdecoding from "./Resultdecoding";
 import Sizeerror from "./Sizeerror";
 import Sizeformat from "./Sizeformat";
 render(
-  <HashRouter>
-    <Switch>
-      <Route path="/" element={<App />} />
-      <Route path="decoding" element={<Decoding />} />
-      <Route path="encrypt" element={<Encrypt />} />
-      <Route path="resultencrypt" element={<Resultencrypt />} />
-      <Route path="resultdecoding" element={<Resultdecoding />} />
-      <Route path="sizeerror" element={<Sizeerror />} />
-      <Route path="sizeformat" element={<Sizeformat />} />
-    </Switch>
-  </HashRouter>,
-  document.getElementById("root")
-); 
+    <HashRouter>
+        <Switch>
+            <Route path="/" element={<App />} />
+            <Route path="decoding" element={<Decoding />} />
+            <Route path="encrypt" element={<Encrypt />} />
+            <Route path="resultencrypt" element={<Resultencrypt />} />
+            <Route path="resultdecoding" element={<Resultdecoding />} />
+            <Route path="sizeerror" element={<Sizeerror />} />
+            <Route path="sizeformat" element={<Sizeformat />} />
+        </Switch>
+    </HashRouter>,
+    document.getElementById("root")
+);

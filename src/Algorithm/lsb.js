@@ -32,7 +32,7 @@ export async function excract(url) {
 }
 
 /**
- * Функция замещает последние байты 
+ * Функция замещает последние байты
  * @param {string} url - URL адрес изображения
  * @param {string} message - двоичный код сообщения
  * @returns URL изображения с закодированны сообщением
@@ -41,12 +41,18 @@ async function putMessageInLSB(url, message) {
     const response = await fetch(url);
     const buffer = await response.arrayBuffer();
     if (!isBMP(buffer)) {
-        throw {code: 1, message: "Ошибка: переданный файл не является bmp-изображением."};
+        throw {
+            code: 1,
+            message: "Ошибка: переданный файл не является bmp-изображением.",
+        };
     }
     const dataView = new DataView(buffer);
     const availableSize = dataView.byteLength - BMP_OFFSET;
     if (availableSize < message.length) {
-        throw {code: 2, message: "Сообщение слишком длинное для этого изображения."};
+        throw {
+            code: 2,
+            message: "Сообщение слишком длинное для этого изображения.",
+        };
     }
     // шестнадцатью нулями обозначаем конец сообщения.
     const messageWithEnding = message + MESSAGE_ENGING;
@@ -68,8 +74,8 @@ async function putMessageInLSB(url, message) {
 
 /**
  * Проверка ?><M
- * @param {ArrayBuffer} buffer 
- * @returns 
+ * @param {ArrayBuffer} buffer
+ * @returns
  */
 function isBMP(buffer) {
     // Если содержимое меньше 2 байт, то это не может быть BMP-изображением
@@ -86,7 +92,10 @@ async function getMessageFromLSB(imageUrl) {
     const response = await fetch(imageUrl);
     const buffer = await response.arrayBuffer();
     if (!isBMP(buffer)) {
-        throw {code: 1, message: "Ошибка: переданный файл не является bmp-изображением."};
+        throw {
+            code: 1,
+            message: "Ошибка: переданный файл не является bmp-изображением.",
+        };
     }
     const dataView = new DataView(buffer);
     let message = "";

@@ -12,11 +12,11 @@ import ApiDemo from "./ApiDemo";
 import { encode, excract } from "./Algorithm/lsb";
 
 function App() {
-    const [encryptImage, setEncryptImage] = React.useState('');
-    const [encryptText, setEncryptText] = React.useState('');
-    const [resultImage, setResultImage] = React.useState('');
-    const [decodingImage, setDecodingImage] = React.useState('');
-    const [resultText, setResultText] = React.useState('');
+    const [encryptImage, setEncryptImage] = React.useState("");
+    const [encryptText, setEncryptText] = React.useState("");
+    const [resultImage, setResultImage] = React.useState("");
+    const [decodingImage, setDecodingImage] = React.useState("");
+    const [resultText, setResultText] = React.useState("");
     const navigate = useNavigate();
     const onEncrypt = async (img, txt) => {
         setEncryptImage(img);
@@ -24,40 +24,49 @@ function App() {
         try {
             const result = await encode(txt, img);
             setResultImage(result);
-        } catch (err){
+        } catch (err) {
             if (err?.code === 1) {
-                navigate('/sizeformat');
+                navigate("/sizeformat");
             }
             if (err?.code === 2) {
-                navigate('/sizeerror');
+                navigate("/sizeerror");
             }
         }
-    }
+    };
     const onDecoding = async (img) => {
         try {
             setDecodingImage(img);
-            const  messange= await excract(img);
+            const messange = await excract(img);
             setResultText(messange);
-        } catch (err){
+        } catch (err) {
             if (err?.code === 1) {
-                navigate('/sizeformat');
+                navigate("/sizeformat");
             }
             if (err?.code === 2) {
-                navigate('/sizeerror');
+                navigate("/sizeerror");
             }
         }
-    }
+    };
     return (
-            <Routes>
-                <Route path="/" element={<Main />} />
-                <Route path="decoding" element={<Decoding onDecoding={onDecoding}/>} />
-                <Route path="encrypt" element={<Encrypt onEncrypt={onEncrypt}/>} />
-                <Route path="resultencrypt" element={<Resultencrypt image={resultImage}/>} />
-                <Route path="resultdecoding" element={<Resultdecoding text={resultText}/>} />
-                <Route path="sizeerror" element={<Sizeerror />} />
-                <Route path="sizeformat" element={<Sizeformat />} />
-                <Route path="demo" element={<ApiDemo />} />
-            </Routes>
+        <Routes>
+            <Route path="/" element={<Main />} />
+            <Route
+                path="decoding"
+                element={<Decoding onDecoding={onDecoding} />}
+            />
+            <Route path="encrypt" element={<Encrypt onEncrypt={onEncrypt} />} />
+            <Route
+                path="resultencrypt"
+                element={<Resultencrypt image={resultImage} />}
+            />
+            <Route
+                path="resultdecoding"
+                element={<Resultdecoding text={resultText} />}
+            />
+            <Route path="sizeerror" element={<Sizeerror />} />
+            <Route path="sizeformat" element={<Sizeformat />} />
+            <Route path="demo" element={<ApiDemo />} />
+        </Routes>
     );
 }
 

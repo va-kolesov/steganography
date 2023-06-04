@@ -1,11 +1,11 @@
-.Main{
+.Main {
     background-image: url("img/b.webp");
 }
 
-.index_header{
+.index_header {
     display: flex;
     align-items: center;
-    justify-content: center;    
+    justify-content: center;
 }
 
 .index_middle {
@@ -16,27 +16,30 @@
     height: 100%;
 }
 
-
 .button_main {
     display: flex;
+    justify-content: center;
     border-radius: 50%;
     box-sizing: border-box;
     width: 420px;
     height: 103px;
     background: rgba(58, 165, 88, 0.5);
     border: 1px solid #0b402a;
-    cursor: pointer; 
+    cursor: pointer;
+    box-shadow: 0 0 0px rgba(0, 0, 0, 0.4);
 }
 
+.button_main:hover {
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.4);
+}
 
-/* что нужно сделать блок*/
-.Main_header_block{
+.Main_header_block {
     box-sizing: border-box;
     display: flex;
     align-items: center;
     justify-content: center;
     height: 84px;
-   
+
     min-width: 400px;
     top: 38px;
     background: rgba(45, 111, 160, 0.5);
@@ -44,8 +47,7 @@
     border-radius: 32px;
 }
 
-/* что нужно сделать надпись*/
-.Main_header_text {   
+.Main_header_text {
     font-style: italic;
     font-weight: 40;
     font-size: 25px;
@@ -53,14 +55,10 @@
     text-align: center;
     color: #0e044f;
     mix-blend-mode: overlay;
-
 }
-/* надпись на кнопках index*/
+
 .index_middle_text {
-   padding-top: 20px;
-   padding-left:89px;
     box-sizing: border-box;
-    height: 103px;
     font-weight: 40;
     font-family: "Inria Serif";
     font-style: italic;
@@ -68,38 +66,28 @@
     text-align: center;
     color: #05030a;
     mix-blend-mode: overlay;
-    line-height: 43px;
-    
+    line-height: 88px;
 }
 
-/* надпись стенография bpm index*/
 .text3 {
-    position: absolute;
-    width: 290px;
-    height: 86px;
-    font-family: 'Inria Serif';
+    font-family: "Inria Serif";
     font-style: italic;
     font-weight: 400;
     font-size: 36px;
     line-height: 43px;
     text-align: center;
-    color: #0E044F;
+    color: #0e044f;
     mix-blend-mode: overlay;
 }
-.bt1{
-    display: flex;
-    justify-content: space-between;
-}
+
 .stenog {
     box-sizing: border-box;
-    position: flex;
     height: 100px;
     align-items: center;
     justify-content: center;
-    
     width: 300px;
-    background: rgba(160, 141, 45,0.85);
-    
+    background: rgba(160, 141, 45, 0.85);
+    display: flex;
     border: 1px solid #19177e;
     border-radius: 32px;
     margin-top: 210px;
