@@ -28,7 +28,7 @@ function Main() {
             <div className="flex-row">
                 <span></span>
                 <div className="stenog">
-                    <span className="text3">Стеганография в BPM</span>
+                    <span className="text3">Стеганография в BMP</span>
                 </div>
             </div>
         </div>
