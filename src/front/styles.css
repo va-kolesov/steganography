@@ -53,6 +53,10 @@ body,
     margin-top: 30px;
 }
 
+.button:hover {
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.4);
+}
+
 .button_caption {
     font-style: italic;
     font-weight: 400;
